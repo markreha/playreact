@@ -9,14 +9,14 @@
     "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "heroku-postbuild": "echo Do nothing Heroku Build"
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+     "heroku-postbuild": "echo Do nothing Heroku Build"
   },
   "eslintConfig": {
     "extends": "react-app"
