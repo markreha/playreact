@@ -53,10 +53,10 @@ In the project directory, you can run:
 		  * web: node server.js
 		4. Add a new file named server.js to the repository that will be used to serve up the React application:
 		  * Set the following code to initialize the Express application (and specify an APP_NAME):
-			    * app.use(express.static(__dirname);
-			    * app.use(express.static(__dirname + 'build');
-			* The /route should contain the following code (and specify an APP_NAME):
-			    * res.sendFile(path.join(__dirname, 'build', 'index.html');  
+		  	* app.use(express.static(__dirname);
+			* app.use(express.static(__dirname + 'build');
+		* The /route should contain the following code (and specify an APP_NAME):
+			* res.sendFile(path.join(__dirname, 'build', 'index.html');  
 4. Deploy from a Build:
     1. Run a build using the npm run build command.
     2. Push all the code including the build directory to the repository.
