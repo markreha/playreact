@@ -98,7 +98,7 @@ In the project directory, you can run:
 		* Click the Deploy button.
 5. Deploy from a GIT CI/CD Build Pipeline:
 	1. Configure code and setup build pipeline (if not already completed):
-		* Add a buildspec.yml to the root of your application code for Node 10 application.
+		* Add a buildspec.yml (see example below) to the root of your application code for Node 10 application.
 		* Log into AWS and select Services from the main menu.
 		* Select the CodePipeline service.
 		* Click the Create Pipeline button.
@@ -112,3 +112,33 @@ In the project directory, you can run:
 	2.	To build and deploy your application:
 		* Select the CodePipeline service from the Services dashboard. Open the Pipeline.
 		* Either make a change to code in GitHub or click the Release change button to start a build and deployment.
+<br/><br/> 
+      ```yaml
+	version: 0.2
+
+	# Build the code
+	phases:
+	  install:
+	    runtime-versions:
+	      nodejs: 10  
+	  pre_build:
+	    commands:
+	      - echo Installing source NPM dependencies...
+	      - npm install
+	  build:
+	    commands:
+	      - echo Build started on `date`
+	      - npm run build
+	  post_build:
+	    commands:
+	      - echo Build completed on `date`
+
+	# Include only the files required for your application to run.
+	artifacts:
+	  files:
+	    - server.js
+	    - Procfile
+	    - package.json
+	    - build/**/*
+	    - public/**/*     
+      ```
