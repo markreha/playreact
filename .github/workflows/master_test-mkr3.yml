@@ -31,4 +31,4 @@ jobs:
         app-name: 'test-mkr3'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_3d999cae44434f6ba7fd39779a121aef }}
-        package: .
+        package: ./build
