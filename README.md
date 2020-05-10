@@ -52,7 +52,7 @@ In the project directory, you can run:
 	  3. Add a new file named Procfile to the repository with the following entry:
 		  * web: node server.js
 		4. Add a new file named server.js to the repository that will be used to serve up the React application:
-		  * Set the following code to initialize the Express application (and specify an APP_NAME):
+		  * Set the following code to initialize the Express application:
 		  	* app.use(express.static(__dirname);
 			* app.use(express.static(__dirname + 'build');
 		  * The /route should contain the following code:
