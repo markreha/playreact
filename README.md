@@ -71,44 +71,44 @@ In the project directory, you can run:
 	1. Click the Create a new application button.
 	2. Give your application a name. Click the Create button.
 	3. Click the Create a new environment button.
-		- Web server environment
-		- Platform of Node.js
-		- Platform branch of Node.js 10 running on 64bit Linux
-		- Sample application
-		- Click the Create button
-		- Once the environment is up and running test the Sample application to ensure all is working properly
-	3. Configure the application:
-		1. Update package.json to include the express library in the list of dependencies specifiying the version of express used in development:
-			- "express": "^4.17.1"
-		2. Update package.json to include a Heroku post install step to build the project in the list of scripts (this step is only required for CI/CD builds): 
-			- "heroku-postbuild": "react-scripts build"
-		3. Add a new file named Procfile to the repository with the following entry:
-			- web: node server.js
-		4. Add a new file named server.js to the repository that will be used to serve up the React application:
-			- Set the following code to initialize the Express application:
-				- app.use(express.static(__dirname);
-				- app.use(express.static(path.join(__dirname, 'build');
-			- The /route should contain the following code:
-				- res.sendFile(path.join(__dirname, 'build', 'index.html');  
-	4. Deploy from a Build:
-		1. Run a build using the npm run build command.
-		2. Zip up all the code and files within the build directory but do not include the node_modules and src directories.
-		3. Click on the Upload and deploy button.
-			- Click the Choose file button and select your zip file.
-			- Click the Deploy button.
-	5. Deploy from a GIT CI/CD Build Pipeline:
-		1. Configure code and setup build pipeline (if not already completed):
-			- Add a buildspec.yml to the root of your application code for Node 10 application.
-			- Log into AWS and select Services from the main menu.
-			- Select the CodePipeline service.
-			- Click the Create Pipeline button.
-			- Give your pipeline a name (i.e. TestAppPipeline). Click the Next step button.
-			- Select GitHub from the Source provider dropdown. Click the Connect to GitHub button and select your repository and master branch. Click the Next step button.
-			- Select AWS CodeBuild from the Build provider dropdown. Select the Create a new build project option. Give your build a name. Select Linux operating system with defaults and using a buildspec.
-			- Click the Create Project button.
-			- Click the Next step button.
-			- Select AWS Elastic Beanstalk from the Deployment provider dropdown. Choose your Application and Environment from the dropdowns. Click the Next step button.
-			- Click the Create pipeline button.
-		2.	To build and deploy your application:
-			- Select the CodePipeline service from the Services dashboard. Open the Pipeline.
-			- Either make a change to code in GitHub or click the Release change button to start a build and deployment.
+		* Web server environment
+		* Platform of Node.js
+		* Platform branch of Node.js 10 running on 64bit Linux
+		* Sample application
+		* Click the Create button
+		* Once the environment is up and running test the Sample application to ensure all is working properly
+3. Configure the application:
+	1. Update package.json to include the express library in the list of dependencies specifiying the version of express used in development:
+		* "express": "^4.17.1"
+	2. Update package.json to include a Heroku post install step to build the project in the list of scripts (this step is only required for CI/CD builds): 
+		* "heroku-postbuild": "react-scripts build"
+	3. Add a new file named Procfile to the repository with the following entry:
+		* web: node server.js
+	4. Add a new file named server.js to the repository that will be used to serve up the React application:
+		* Set the following code to initialize the Express application:
+			* app.use(express.static(__dirname);
+			* app.use(express.static(path.join(__dirname, 'build');
+		* The /route should contain the following code:
+			* res.sendFile(path.join(__dirname, 'build', 'index.html');  
+4. Deploy from a Build:
+	1. Run a build using the npm run build command.
+	2. Zip up all the code and files within the build directory but do not include the node_modules and src directories.
+	3. Click on the Upload and deploy button.
+		* Click the Choose file button and select your zip file.
+		* Click the Deploy button.
+5. Deploy from a GIT CI/CD Build Pipeline:
+	1. Configure code and setup build pipeline (if not already completed):
+		* Add a buildspec.yml to the root of your application code for Node 10 application.
+		* Log into AWS and select Services from the main menu.
+		* Select the CodePipeline service.
+		* Click the Create Pipeline button.
+		* Give your pipeline a name (i.e. TestAppPipeline). Click the Next step button.
+		* Select GitHub from the Source provider dropdown. Click the Connect to GitHub button and select your repository and master branch. Click the Next step button.
+		* Select AWS CodeBuild from the Build provider dropdown. Select the Create a new build project option. Give your build a name. Select Linux operating system with defaults and using a buildspec.
+		* Click the Create Project button.
+		* Click the Next step button.
+		* Select AWS Elastic Beanstalk from the Deployment provider dropdown. Choose your Application and Environment from the dropdowns. Click the Next step button.
+		* Click the Create pipeline button.
+	2.	To build and deploy your application:
+		* Select the CodePipeline service from the Services dashboard. Open the Pipeline.
+		* Either make a change to code in GitHub or click the Release change button to start a build and deployment.
