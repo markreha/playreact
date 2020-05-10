@@ -12,6 +12,12 @@ In the project directory, you can run:
 1. Run `npm run build` to build the project. The build artifacts will be stored in the `build/` directory.
 2. Test the React App locally by using MAMP: Copy all the files under the buld directory to the MAMP htdocs/[APP_NAME] directory
 
+## Important Fies
+* .github/workflows - build scripts for Azure GitHub build pipeline
+* Procfile - start file for both Heroku and AWS Cloud Platforms
+* server.js - Express app used to serve the Angular application
+* buildspec.yml - CI/CD Build file for AWS CodePipeline
+
 ## Deployment to Cloud Platform Instructions
 ## Azure:
 1. Create a new Web App (if new application)
