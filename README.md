@@ -101,7 +101,6 @@ In the project directory, you can run:
 		* Add a buildspec.yml to the root of your application code for Node 10 application.
 	```yaml
 		version: 0.2
-
 		# Build the code
 		phases:
 		  install:
