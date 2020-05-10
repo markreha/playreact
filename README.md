@@ -17,6 +17,7 @@ In the project directory, you can run:
 * Procfile - start file for both Heroku and AWS Cloud Platforms
 * server.js - Express app used to serve the Angular application
 * buildspec.yml - CI/CD Build file for AWS CodePipeline
+* app.yaml - build and configuration script for Google Cloud Platform
 
 ## Deployment to Cloud Platform Instructions
 ## Azure:
