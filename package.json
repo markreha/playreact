@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-     "heroku-postbuild": "echo Do Nothing Post Build"
+     "heroku-postbuild": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
