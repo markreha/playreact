@@ -44,6 +44,7 @@ In the project directory, you can run:
 		* Click the Finish button.
 		* In the GitHub repo modify the GitHub build workflow file in the .guthub/workflows directory
 			* Change the package: . entry to package: ./build
+			* Remove the steps for Unit Testing
 
 ## Heroku:
 1. Create a new Web App (if new application)
