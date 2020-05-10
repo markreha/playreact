@@ -9,10 +9,8 @@ In the project directory, you can run:
   * The page will reload if you make edits.
 
 ## Building and Testing
-1. Run `ng build --base-href [APP_ROOT_DIR]` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-  * Use . if you want to deploy to the root directory of the web site
-  * Use APP_ROOT_DIR if you want to deploy to a URI of APP_ROOT_DIR of the web site
-2. Test the Angular App locally by using MAMP: Copy all the files under the dist directory to the MAMP htdocs directory
+1. Run `npm run build` to build the project. The build artifacts will be stored in the `build/` directory.
+2. Test the React App locally by using MAMP: Copy all the files under the buld directory to the MAMP htdocs/[APP_NAME] directory
 
 ## Deployment to Cloud Platforms
 ## Azure:
