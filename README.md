@@ -12,7 +12,7 @@ In the project directory, you can run:
 1. Run `npm run build` to build the project. The build artifacts will be stored in the `build/` directory.
 2. Test the React App locally by using MAMP: Copy all the files under the buld directory to the MAMP htdocs/[APP_NAME] directory
 
-## Deployment to Cloud Platforms Instructions
+## Deployment to Cloud Platform Instructions
 ## Azure:
 1. Create a new Web App (if new application)
 	1. Select the + Create a new Resource menu option.
