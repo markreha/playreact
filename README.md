@@ -22,20 +22,20 @@ In the project directory, you can run:
 	3. After your new application deployment is finished click the application link to test out. Click go to Resource.
 2. Open the Web App from the Dashboard
 3. Deploy from a Build:
-			1. Select Advanced Tools and click the Go link
-			2. Select the Debug console->CMD menu options.
-			3. Navigate to the site/wwwroot directory.
-			4. Delete the default content.
-			5. Zip up all the files under your files within the build directory. 
-			6. Drag and drop the zip file onto the right side of the CMD window.		 
+	1. Select Advanced Tools and click the Go link
+	2. Select the Debug console->CMD menu options.
+	3. Navigate to the site/wwwroot directory.
+	4. Delete the default content.
+	5. Zip up all the files under your files within the build directory. 
+	6. Drag and drop the zip file onto the right side of the CMD window.		 
 4. Deploy from a GIT CI/CD Build Pipeline:
-			1. Select the Deployment Center menu option.
-			2. Select the GitHub CI/CD type (authorize access if necessary) and click the Continue button.
-			3. Select the GitHub Actions type and click the Continue button.
-				* Fill in the GitHub Repository
-				* Select the master branch
-				* Select the Node.JS Runtime stack
-				* Select the Node Version
-				* Click the Finish button.
-				* In the GitHub repo modify the GitHub build workflow file in the .guthub/workflows directory
-					 * Change the package: . entry to package: ./build
+	1. Select the Deployment Center menu option.
+	2. Select the GitHub CI/CD type (authorize access if necessary) and click the Continue button.
+	3. Select the GitHub Actions type and click the Continue button.
+		* Fill in the GitHub Repository
+		* Select the master branch
+		* Select the Node.JS Runtime stack
+		* Select the Node Version
+		* Click the Finish button.
+		* In the GitHub repo modify the GitHub build workflow file in the .guthub/workflows directory
+			* Change the package: . entry to package: ./build
