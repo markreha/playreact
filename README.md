@@ -47,8 +47,8 @@ In the project directory, you can run:
 3. Configure the application:
     1. Update package.json to include the express library in the list of dependencies specifiying the version of express used in development:
         * "express": "^4.17.1"
-    2. Update package.json to include a Heroku post install step to build the project in the list of scripts: 
-		  * "heroku-postbuild": "react-scripts build". This step is only required for CI/CD builds.
+    2. Update package.json to include a Heroku post install step to build the project in the list of scripts (this step is only required for CI/CD builds): 
+		  * "heroku-postbuild": "react-scripts build"
 	  3. Add a new file named Procfile to the repository with the following entry:
 		  * web: node server.js
 		4. Add a new file named server.js to the repository that will be used to serve up the React application:
