@@ -23,7 +23,6 @@ artifacts:
     - server.js
     - Procfile
     - package.json
-    - build/*
-    - node_modules/*
-    - public/*
+    - build/**/*
+    - public/**/*
 
