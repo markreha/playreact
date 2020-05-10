@@ -1,0 +1,23 @@
+version: 0.1
+
+# Build the code
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10  
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+# Include only the files required for your application to run.
+artifacts:
+  files:
+    - server.js
+    - Procfile
+    - package.json
+    - build/*
+    - node_modules/*
