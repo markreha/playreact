@@ -55,7 +55,7 @@ In the project directory, you can run:
 		  * Set the following code to initialize the Express application (and specify an APP_NAME):
 		  	* app.use(express.static(__dirname);
 			* app.use(express.static(__dirname + 'build');
-		* The /route should contain the following code (and specify an APP_NAME):
+		  * The /route should contain the following code (and specify an APP_NAME):
 			* res.sendFile(path.join(__dirname, 'build', 'index.html');  
 4. Deploy from a Build:
     1. Run a build using the npm run build command.
