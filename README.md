@@ -12,7 +12,7 @@ In the project directory, you can run:
 1. Run `npm run build` to build the project. The build artifacts will be stored in the `build/` directory.
 2. Test the React App locally by using MAMP: Copy all the files under the buld directory to the MAMP htdocs/[APP_NAME] directory
 
-## Deployment to Cloud Platforms
+## Deployment to Cloud Platforms Instructions
 ## Azure:
 1. Create a new Web App (if new application)
 	1. Select the + Create a new Resource menu option.
@@ -37,3 +37,30 @@ In the project directory, you can run:
 		* Click the Finish button.
 		* In the GitHub repo modify the GitHub build workflow file in the .guthub/workflows directory
 			* Change the package: . entry to package: ./build
+
+## Heroku:
+1. Create a new Web App (if new application)
+    1. Select the New button and select the Create new app menu option. Give your app a Name. Click the Create Appp button.
+    2. Select the GitHub deployment method and connection to your GitHub repository.
+    3. After your new application deployment is finished click the application link to test out. Click go to Resource.
+2. Open the Web App from the Dashboard
+3. Configure the application:
+    1. Update package.json to include the express library in the list of dependencies specifiying the version of express used in development:
+        * "express": "^4.17.1"
+    2. Update package.json to include a Heroku post install step to build the project in the list of scripts: 
+		  * "heroku-postbuild": "react-scripts build". This step is only required for CI/CD builds.
+	  3. Add a new file named Procfile to the repository with the following entry:
+		  * web: node server.js
+		4. Add a new file named server.js to the repository that will be used to serve up the React application:
+		  * Set the following code to initialize the Express application (and specify an APP_NAME):
+			    * app.use(express.static(__dirname);
+			    * app.use(express.static(__dirname + 'build');
+			* The /route should contain the following code (and specify an APP_NAME):
+			    * res.sendFile(path.join(__dirname, 'build', 'index.html');  
+4. Deploy from a Build:
+    1. Run a build using the npm run build command.
+    2. Push all the code including the build directory to the repository.
+    3. Select the Deploy menu from Heroku. Click the Deploy Branch button.
+5. Deploy from a GIT CI/CD Build Pipeline:
+    1. Push all the code excluding the build directory to the repository.
+    2. Select the Deploy menu from Heroku. Click the Enable Automatic Deploy button. Click the Deploy Branch button.
