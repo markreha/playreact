@@ -186,7 +186,7 @@ In the project directory, you can run:
 		- Either make a change to code in GitHub and select the Cloud Build->Dashboard menu open options or select the Cloud Build->Triggers menu and click the Run Trigger button to start a build and deployment.	
 <br/><br/> 
       ```yaml
-      	steps:
+	steps:
 
 	# Install node packages
   	- name: 'gcr.io/cloud-builders/npm'
