@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
        	Welcome to the GCU Cloud Test App
         <img src="images/gcu-logo.jpg" alt="logo" />
-        <p>This is a "Hello World" React application that is used to test with all the Cloud Platforms.</p>
+        <p>This is a "Hello World" React application that is used to test with all the Cloud Platforms!</p>
       </header>
     </div>
   );
