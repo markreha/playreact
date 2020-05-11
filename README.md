@@ -151,3 +151,52 @@ In the project directory, you can run:
 	    - build/**/*
 	    - public/**/*     
       ```
+
+## Google Cloud:
+1. Log into Google Cloud.
+2. Create a new Web App (if new application):
+	1. Click on the list of projects in the top menu bar. Click the New Project button.
+	2. Give your project a name, click the Create button, then select a US region and NodeJS for framework.
+3. Configure the application:
+	1. Add a Google Cloud app.yaml file to the root of your repository.
+	2. Set runtime to nodejs and the environment to flex and the desired minmum manual scaling settings (see the Google Cloud web site for examples).
+4. Deploy from a Build:
+	1. Activate the Cloud Shell for your project:
+	2. Create a working directory or navigate to an existing working directory.
+		- NOTE: these steps assume the use of the Google Cloud Shell but an alternative is to download and install the Google Cloud SDK (at https://cloud.google.com/sdk).
+	3. Clone the GIT Repository using the 'git clone [GIT REPO URL]' command. Navigate to the root of your project code.
+	4. Run the 'npm install' command.
+	5. Run the 'npm run build' command (if you make any changes run a 'git pull [GIT REPO URL]' command and run the 'npm run build' command again).
+	6. Update the package.json file (you can use the build in Code Editor in the Cloud Shell) with the following changes to the scripts:
+		- Update: "start": "serve -s build",
+		- Add: "prestart": "npm install -g serve",
+	7. Run the 'gcloud app deploy --project [PROJECT ID]' command.
+	8. Access the application from the URL noted in the build screen or select the App Engine->Versions menu options from the main Google Cloud page.
+5. Deploy from a GIT CI/CD Build Pipeline:
+	1. Select Cloud Build from the Google Cloud main menu.
+	2. Enable the App Engine Admin API by going to the API's & Services-> Library menu options, search for App Engine Admin API, and enable the API.
+	3. Click the Settings menu. Enable App Engine Service account permissions.
+	4. Select the Triggers menu. Click the Connect repository button. Select GitHub option. Click the Continue button. Click the Install Google Cloud Build button to enable access to desired repositories for specified projects.
+	5. Create a Google Cloud Build file named cloudbuild.yaml and add this to the root of the project in GitHub. See example below.
+	6. Update the package.json file (you can use the build in Code Editor in the Cloud Shell) with the following changes to the scripts:
+		- Update: "start": "serve -s build",
+		- Add: "prestart": "npm install -g serve",
+	7. To build and deploy your application:
+		- Select the Cloud Build->Triggers menu open options.
+		- Either make a change to code in GitHub and select the Cloud Build->Dashboard menu open options or select the Cloud Build->Triggers menu and click the Run Trigger button to start a build and deployment.	
+<br/><br/> 
+      ```yaml
+      	steps:
+
+	# Install node packages
+  	- name: 'gcr.io/cloud-builders/npm'
+    	  args: [ 'install' ]
+
+  	# Build productive files
+  	- name: 'gcr.io/cloud-builders/npm'
+    	  args: [ 'run', 'build', '--prod' ]
+
+  	# Deploy to google cloud app egnine
+  	- name: 'gcr.io/cloud-builders/gcloud'
+    	  args: ['app', 'deploy', '--version=prod']
+      ```
