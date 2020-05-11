@@ -1,3 +1,9 @@
 runtime: nodejs
 env: flex
 
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 0.25
+  memory_gb: 0.50
+  disk_size_gb: 1.00
