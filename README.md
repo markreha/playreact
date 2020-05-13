@@ -1,4 +1,4 @@
-<img src="https://share.icloud.com/photos/0H7SsffEHuod-ClL1x748nusw"/> # A simple React that can be used for testing in various Cloud Platforms like Azure and Heroku. See the following directions for deploying a React application to Azure, AWS, Heroku, and Google Cloud.
+# A simple React that can be used for testing in various Cloud Platforms like Azure and Heroku. See the following directions for deploying a React application to Azure, AWS, Heroku, and Google Cloud.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Available Scripts
