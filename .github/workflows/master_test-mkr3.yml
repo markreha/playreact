@@ -5,6 +5,9 @@ name: Build and deploy Node.js app to Azure Web App - test-mkr3
 
 on:
   push:
+    paths-ignore:
+      - 'README.md'
+      - 'Diagrams/**'
     branches:
       - master
 
